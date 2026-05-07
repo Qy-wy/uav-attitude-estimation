@@ -19,9 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FeatureMatcher.h" />
     <ClInclude Include="Preprocessor.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FeatureMatcher.cpp" />
     <ClCompile Include="Preprocessor.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
