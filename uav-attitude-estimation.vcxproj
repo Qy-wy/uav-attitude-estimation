@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AngleAccumulator.h" />
     <ClInclude Include="AngleEstimator.h" />
     <ClInclude Include="Preprocessor.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AngleAccumulator.cpp" />
     <ClCompile Include="AngleEstimator.cpp" />
     <ClCompile Include="Preprocessor.cpp" />
   </ItemGroup>
