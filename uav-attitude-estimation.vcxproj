@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AttitudeEstimator.h" />
     <ClInclude Include="FeatureMatcher.h" />
     <ClInclude Include="AngleAccumulator.h" />
     <ClInclude Include="AngleEstimator.h" />
@@ -26,6 +27,7 @@
     <ClInclude Include="Visualisator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AttitudeEstimator.cpp" />
     <ClCompile Include="FeatureMatcher.cpp" />
     <ClCompile Include="AngleAccumulator.cpp" />
     <ClCompile Include="AngleEstimator.cpp" />
