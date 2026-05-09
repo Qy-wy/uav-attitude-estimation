@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FeatureMatcher.h" />
     <ClInclude Include="AngleAccumulator.h" />
     <ClInclude Include="AngleEstimator.h" />
     <ClInclude Include="Preprocessor.h" />
     <ClInclude Include="Visualisator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FeatureMatcher.cpp" />
     <ClCompile Include="AngleAccumulator.cpp" />
     <ClCompile Include="AngleEstimator.cpp" />
     <ClCompile Include="Preprocessor.cpp" />
