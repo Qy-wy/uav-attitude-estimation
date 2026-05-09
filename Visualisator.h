@@ -11,7 +11,7 @@ private:
 	double py;
 	cv::Mat k;
 public:
-	Visualisator(const cv::Mat& k);
+	Visualisator(const cv::Mat& K);
 	void drawVirtualHorisont(cv::Mat& frame, double roll, double pitch);
 	cv::Mat stabilize(cv::Mat& frame, double dteta, double dphi, double dpsi);
 };
