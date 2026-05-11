@@ -57,8 +57,7 @@ AnglesIncrements AngleEstimator::estimate(const std::vector<KeyPoint>& p1, const
 		b.at<double>(2 * i + 1) = -dv[i];
 	}
 
-	Mat At = A.t();
-	dAngles = (At * A).inv() * At * b;
+	solve(A, b, dAngles, DECOMP_SVD);
 
 	result.dteta = dAngles.at<double>(0);
 	result.dphi = dAngles.at<double>(1);
