@@ -6,7 +6,7 @@
 struct FramePair {
 	cv::Mat prevGrayFrame;
 	cv::Mat currGrayFrame;
-	cv::Mat currFrame;
+	cv::Mat currColorFrame;
 };
 
 class Preprocessor {
