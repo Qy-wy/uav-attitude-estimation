@@ -35,7 +35,7 @@ bool Preprocessor::getNextFrame(FramePair& frames)
         return false;
     }
 
-    frames.currFrame = currFrame;
+    frames.currColorFrame = currFrame;
 
     cvtColor(currFrame, currGray, COLOR_BGR2GRAY);
 

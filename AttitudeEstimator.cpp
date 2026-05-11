@@ -13,6 +13,7 @@ void AttitudeEstimator::run()
 	if (!preprocessor.loadFirstFrame())
 	{
 		cerr << "Error loading the first frame";
+		return;
 	}
 
 	FramePair frames;
@@ -25,5 +26,14 @@ void AttitudeEstimator::run()
 		double roll = accumulator.getPhi();
 		double pitch = accumulator.getTeta();
 		double yaw = accumulator.getPsi();
+
+		cv::Mat stabilized = visualisator.stabilize(frames.currColorFrame, incs.dteta, incs.dphi, incs.dpsi);
+		visualisator.drawVirtualHorisont(stabilized, roll, pitch);
+		cv::imshow("Стабилизация", stabilized);
+
+		if(cv::waitKey(1) == 27)
+		{
+			break;
+		}
 	}
 }
