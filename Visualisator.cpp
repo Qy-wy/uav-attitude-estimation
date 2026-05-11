@@ -11,7 +11,7 @@ Visualisator::Visualisator(const Mat& K)
 	K.copyTo(k);
 }
 
-void Visualisator::drawVirtualHorisont(Mat& frame, double roll, double pitch)
+void Visualisator::drawVirtualHorizon(Mat& frame, double roll, double pitch)
 {
 	if (frame.empty())
 	{
