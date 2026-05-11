@@ -24,7 +24,12 @@ AnglesIncrements AngleEstimator::estimate(const std::vector<KeyPoint>& p1, const
 	Mat A = Mat::zeros(2 * N, 3, CV_64F);
 	Mat b = Mat::zeros(2 * N, 1, CV_64F);
 	Mat dAngles;
-	AnglesIncrements result;
+	AnglesIncrements result = { 0.0, 0.0, 0.0 };
+
+	if (inliers.size() < 3)
+	{
+		return result;
+	}
 
 	for (int i = 0; i < N; i++)
 	{

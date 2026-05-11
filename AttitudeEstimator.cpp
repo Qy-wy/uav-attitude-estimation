@@ -28,7 +28,7 @@ void AttitudeEstimator::run()
 		double yaw = accumulator.getPsi();
 
 		cv::Mat stabilized = visualisator.stabilize(frames.currColorFrame, incs.dteta, incs.dphi, incs.dpsi);
-		visualisator.drawVirtualHorisont(stabilized, roll, pitch);
+		visualisator.drawVirtualHorizon(stabilized, roll, pitch);
 		cv::imshow("Стабилизация", stabilized);
 
 		if(cv::waitKey(1) == 27)
