@@ -12,7 +12,7 @@ private:
 	cv::Mat k;
 public:
 	Visualisator(const cv::Mat& K);
-	void drawVirtualHorizon(cv::Mat& frame, double roll, double pitch);
+	void drawVirtualHorizon(cv::Mat& frame, double roll, double pitch, double yaw);
 	cv::Mat stabilize(cv::Mat& frame, double dteta, double dphi, double dpsi);
 };
 

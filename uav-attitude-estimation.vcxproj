@@ -31,6 +31,7 @@
     <ClCompile Include="FeatureMatcher.cpp" />
     <ClCompile Include="AngleAccumulator.cpp" />
     <ClCompile Include="AngleEstimator.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Preprocessor.cpp" />
     <ClCompile Include="Visualisator.cpp" />
   </ItemGroup>
@@ -138,7 +139,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\opencv_build\build\install\x64\vc17\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world4130.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world4130.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

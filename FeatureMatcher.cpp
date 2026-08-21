@@ -16,6 +16,11 @@ MatchResult FeatureMatcher::match(const cv::Mat& prevGrayFrame, const cv::Mat& c
 	orb->detect(prevGrayFrame, result.point1);
 	orb->detect(currGrayFrame, result.point2);
 
+    if (result.point1.empty() || result.point2.empty())
+    {
+        return result;
+    }
+
 	freak->compute(prevGrayFrame, result.point1, descriptor1);
 	freak->compute(currGrayFrame, result.point2, descriptor2);
 
@@ -42,7 +47,18 @@ MatchResult FeatureMatcher::match(const cv::Mat& prevGrayFrame, const cv::Mat& c
     }
 
     std::vector<uchar> mask;
-    Mat F = findFundamentalMat(pts1, pts2, FM_RANSAC, 3.0, 0.99, mask);
+    Mat F;
+
+    // add try catch, because at the end of the video findFundamentalMat throws exception
+    try
+    {
+        F = findFundamentalMat(pts1, pts2, FM_RANSAC, 1.0, 0.99, mask);
+    }
+    catch (Exception e)
+    {
+        result.matches = rawMatches;
+        return result;        
+    }
 
     if (F.empty() || mask.empty())
     {

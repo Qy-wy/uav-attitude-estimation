@@ -11,30 +11,12 @@ Visualisator::Visualisator(const Mat& K)
 	K.copyTo(k);
 }
 
-void Visualisator::drawVirtualHorizon(Mat& frame, double roll, double pitch)
+void Visualisator::drawVirtualHorizon(Mat& frame, double roll, double pitch, double yaw)
 {
 	if (frame.empty())
 	{
 		return;
 	}
-
-	double y0 = py + fy * tan(pitch);
-
-	double x1 = -frame.cols;
-	double x2 = 2 * frame.cols;
-
-	double y1 = y0 + tan(roll) * (x1 - px);
-	double y2 = y0 + tan(roll) * (x2 - px);
-
-	Point p1(static_cast<int>(x1), static_cast<int>(y1));
-	Point p2(static_cast<int>(x2), static_cast<int>(y2));
-
-	line(frame, p1, p2, Scalar(0, 0, 255), 2);
-
-	const int cs = 15;
-
-	line(frame, Point(px - cs, py), Point(px + cs, py), Scalar(255, 255, 255), 1);
-	line(frame, Point(px, py - cs), Point(px, py + cs), Scalar(255, 255, 255), 1);
 }
 
 Mat Visualisator::stabilize(Mat& frame, double dteta, double dphi, double dpsi)
@@ -47,7 +29,6 @@ Mat Visualisator::stabilize(Mat& frame, double dteta, double dphi, double dpsi)
 	Mat stabilized;
 	Mat omega_x = Mat::zeros(3, 3, CV_64F);
 	Mat I = Mat::eye(3, 3, CV_64F);
-
 
 	omega_x.at<double>(0, 0) = 0.0;
 	omega_x.at<double>(0, 1) = -dpsi;
